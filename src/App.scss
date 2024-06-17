@@ -1,0 +1,19 @@
+$components-bg-color: rgb(240, 240, 240);
+$components-color: black;
+
+.app {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: green;
+  &__component {
+    padding: 30px;
+    background-color: $components-bg-color;
+    color: $components-color;
+    margin: 30px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
