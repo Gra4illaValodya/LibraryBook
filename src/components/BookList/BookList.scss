@@ -12,8 +12,29 @@
   }
   &__no-books {
   }
-  &__wrapper {
+  &__text-wrapper {
     display: flex;
+  }
+  &__btn-wrapper {
+    display: flex;
+    z-index: 0;
+  }
+  &__favorite {
+    transition: color 0.3s ease;
+  }
+  &__favorite-inactive {
+    color: grey;
+  }
+  &__favorite-active {
+    color: gold;
+  }
+  &__text-wrapper {
+    display: flex;
+  }
+  &__favorite {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
   }
   &__delete {
     padding: 5px;

@@ -1,12 +1,20 @@
 import "./BookList.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteBook } from "../../redux/Books/actionCreator";
+import { deleteBook, toggleFavorite } from "../../redux/Books/actionCreator";
+import { BsBookmarkStarFill, BsBookmarkStar } from "react-icons/bs";
+
 const BookList = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books);
 
   const handleDelete = (id) => {
     dispatch(deleteBook(id));
+  };
+
+  const handleFavorite = (id, event) => {
+    event.stopPropagation();
+
+    dispatch(toggleFavorite(id));
   };
 
   return (
@@ -19,15 +27,31 @@ const BookList = () => {
           books.map((book, idx) => (
             <li key={book.id} className="BookList__item">
               <div className="BookList__item-wrapper">
-                <div className="BookList__wrapper">
+                <div className="BookList__text-wrapper">
                   <div className="BookList__index">{idx + 1 + "."}</div>
                   <div className="BookList__title">{book.title}</div>
                 </div>
-                <div
-                  className="BookList__delete"
-                  onClick={() => handleDelete(book.id)}
-                >
-                  Delete
+
+                <div className="BookList__btn-wrapper">
+                  <div className="BookList__icon">
+                    {!book.isFavorite ? (
+                      <BsBookmarkStar
+                        className="BookList__favorite BookList__favorite-inactive"
+                        onClick={(event) => handleFavorite(book.id, event)}
+                      />
+                    ) : (
+                      <BsBookmarkStarFill
+                        className="BookList__favorite BookList__favorite-active"
+                        onClick={(event) => handleFavorite(book.id, event)}
+                      />
+                    )}
+                  </div>
+                  <div
+                    className="BookList__delete"
+                    onClick={() => handleDelete(book.id)}
+                  >
+                    Delete
+                  </div>
                 </div>
               </div>
               <div className="BookList__author">
@@ -40,4 +64,5 @@ const BookList = () => {
     </div>
   );
 };
+
 export default BookList;
