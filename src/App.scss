@@ -5,7 +5,7 @@ $component-font-size: 30px;
 .app {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
 
   &__component {
     padding: 30px;
