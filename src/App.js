@@ -14,9 +14,7 @@ function App() {
         <div className="app__component">
           <BookFilter />
         </div>
-        <div className="app__component">
-          <BookList />
-        </div>
+        <div className="app__component">{<BookList />}</div>
       </div>
     </div>
   );
