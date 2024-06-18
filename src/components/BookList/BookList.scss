@@ -12,8 +12,19 @@
   }
   &__no-books {
   }
+  &__wrapper {
+    display: flex;
+  }
+  &__delete {
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: rgb(210, 73, 73);
+    color: white;
+  }
   &__item-wrapper {
     display: flex;
+    justify-content: space-between;
   }
   &__item {
     margin-bottom: 30px;
