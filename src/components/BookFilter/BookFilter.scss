@@ -8,4 +8,7 @@
   &__reset {
     @include button-styles;
   }
+  &__filter-wrapper {
+    display: flex;
+  }
 }
