@@ -16,7 +16,7 @@ const BookForm = () => {
     const randomBook = booksData[randomIndex];
     console.log(randomIndex, randomBook);
 
-    dispatch(addBook(createBookWithId)(randomIndex));
+    dispatch(addBook(createBookWithId(randomBook)));
   };
 
   const handleSubmit = (e) => {

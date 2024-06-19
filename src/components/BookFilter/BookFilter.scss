@@ -1,3 +1,11 @@
 @import "../../app.scss";
-.BookFilterer {
+@import "../../mixins/mixins.scss";
+
+.BookFilter {
+  &__count {
+    color: green;
+  }
+  &__reset {
+    @include button-styles;
+  }
 }
