@@ -2,9 +2,11 @@ import "./BookFilter.scss";
 import {
   setTitleFilter,
   setAuthorFilter,
+  setFavoriteFilter,
+  resetFilter,
   selectFilterTitle,
   selectAuthorFilter,
-  resetFilter,
+  selectFavoriteFilter,
 } from "../../redux/slice/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -12,7 +14,8 @@ const BookFilter = () => {
   const dispatch = useDispatch();
   const titleFilter = useSelector(selectFilterTitle);
   const authorFilter = useSelector(selectAuthorFilter);
-
+  const favoriteFilter = useSelector(selectFavoriteFilter);
+  console.log(favoriteFilter);
   const handleTitleWriteChange = (e) => {
     dispatch(setTitleFilter(e.target.value));
   };
@@ -22,6 +25,9 @@ const BookFilter = () => {
 
   const resetFilterInput = () => {
     dispatch(resetFilter());
+  };
+  const handleFavoriteChangeFilter = () => {
+    dispatch(setFavoriteFilter());
   };
   return (
     <div className="BookFilter">
@@ -40,6 +46,14 @@ const BookFilter = () => {
               onChange={handleAuthorWriteChange}
               value={authorFilter}
             />
+          </div>
+          <div className="BookFilter__filter">
+            <input
+              type="checkbox"
+              checked={favoriteFilter}
+              onChange={handleFavoriteChangeFilter}
+            />
+            Only Favorite
           </div>
           <div className="BookFilter__reset" onClick={resetFilterInput}>
             RESET FILTER
