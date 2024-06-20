@@ -1,0 +1,24 @@
+$components-bg-color: rgb(240, 240, 240);
+$components-color: black;
+$component-font-size: 30px;
+
+.app {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+
+  &__component {
+    padding: 30px;
+    background-color: $components-bg-color;
+    color: $components-color;
+    margin: 30px;
+    font-size: $component-font-size;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    background-color: rgb(35, 35, 161);
+  }
+}
