@@ -16,6 +16,7 @@ const BookList = () => {
   const filterAuthor = useSelector(selectAuthorFilter);
   const filterFavorite = useSelector(selectFavoriteFilter);
 
+  console.log(books);
   const handleDelete = (id) => {
     dispatch(deleteBook(id));
   };
@@ -74,6 +75,7 @@ const BookList = () => {
                 </div>
 
                 <div className="BookList__btn-wrapper">
+                  <div className="BookList__source">{book.source}</div>
                   <div className="BookList__icon">
                     {!book.isFavorite ? (
                       <BsBookmarkStar

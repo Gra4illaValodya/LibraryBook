@@ -60,6 +60,13 @@
   &__author {
     font-size: 1.3rem;
   }
+  &__source {
+    display: flex;
+    font-size: 12px;
+    color: #9e0d0d;
+
+    align-items: center;
+  }
   &__author span {
     font-size: 26px;
     font-weight: 800;
